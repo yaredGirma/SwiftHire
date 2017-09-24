@@ -1,0 +1,27 @@
+<div class="alert alert-success" *ngIf="auth.authenticated()"></div>
+<h1>List of Applicants</h1>
+<div class="container">
+ 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Select Applicant</th>
+          <th>Remove  Applicant</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let applicant of waitlist ">
+        <td>{{ applicant.name }}</td>
+        <td>{{ applicant.email }}</td>
+               
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+ <ul class="nav navbar-nav">
+        <li></li>
+<ul> 

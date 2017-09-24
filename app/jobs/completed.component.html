@@ -1,0 +1,33 @@
+<div class="alert alert-success" *ngIf="auth.authenticated()"></div>
+<h1>List of Completed jobs</h1>
+<div class="container">
+ 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>Rate Employee</th>
+        <th>Remove job</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let job of jobs ">
+        <td>{{ job.name }}</td>
+        <td>{{ job.description }}</td>
+        <td>{{ job.category}}</td>
+        <td>{{ job.City}}</td>
+        <td>Show Detail</td>
+        <td><a routerLink='/rateAndComment'>Rate Employee</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+ <ul class="nav navbar-nav">
+        <li></li>
+<ul> 

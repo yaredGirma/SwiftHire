@@ -1,0 +1,82 @@
+<div class="alert alert-success" *ngIf="auth.authenticated()"></div>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">Name </label>
+    <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name">
+    <p class="text-danger" *ngIf="!myForm.controls['name'].valid ">
+      Required
+    </p>
+  </div>
+
+  <br>
+  <div class="form-group">
+    <label for="description">Descreption</label>
+    <textarea id="description" class="form-control" formControlName="description"></textarea>
+    <p class="text-danger" *ngIf="!myForm.controls['description'].valid ">
+      Minimum length 10
+    </p>
+    <br>
+    <div class="form-group">
+      <label for="category">Job category</label>
+    
+ 
+    <select name="category" id="category" formControlName="category">
+    <option value="" selected>select Job category</option>
+    <option value="Computer Science">Computer Science</option>
+    <option value="Accounting and Finance">Accounting and Finance</option>
+    <option value="Agriculture">Agriculture</option>
+    <option value="Automotive">Automotive</option>
+    <option value="Banking and Insurance">Banking and Insurance</option>
+    <option value="Business and Administration">Business and Administration</option>
+    <option value="Economics">Economics</option>
+    <option value="Education">Education</option>
+    <option value="Engineering">Engineering</option>
+    <option value="Environment and Natural Science">Environment and Natural Science</option>
+    <option value="Event Management">Event Management</option>
+    <option value="Health Care">Health Care</option>
+    <option value="Human Resource and Administration">Human Resource and Administration</option>
+</select>
+<p class="text-danger"  *ngIf="!myForm.controls['category'].valid">
+        Required
+</p>
+ </div>
+    <br>
+    <div class="form-group">
+      <label for="duration">duration</label>
+      <input type="text" class="form-control" id="duration" formControlName="duration" placeholder="Job duration">
+      <p class="text-danger" *ngIf="!myForm.controls['duration'].valid ">
+        Required
+      </p>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="DurationPerHour">DurationPerHour</label>
+      <input type="text" class="form-control" id="DurationPerHour" formControlName="DurationPerHour" placeholder="Duration PerHour">
+      <p class="text-danger" *ngIf="!myForm.controls['DurationPerHour'].valid ">
+        Required
+      </p>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="hourlyFee">hourlyFee</label>
+      <input type="text" class="form-control" id="hourlyFee" formControlName="hourlyFee" placeholder="hourly Fee">
+      <p class="text-danger" *ngIf="!myForm.controls['hourlyFee'].valid ">
+        Required
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="preferredDateTime">preferred Date Time</label>
+      <input type="text" class="form-control" id="preferredDateTime" formControlName="preferredDateTime" placeholder="Job preferred Date and Time">
+      <p class="text-danger" *ngIf="!myForm.controls['preferredDateTime'].valid ">
+        Required
+      </p>
+    </div>
+
+  </div>
+  <button type="submit" >Submit</button>
+  <button type="reset" ng-click="reset()">Clear</button>
+</form>
